@@ -1,16 +1,6 @@
-# finalap
+# Baalofy
+###### An app made to save the most expensive thing.
 
-A new Flutter project.
+You can save you time in salon as now you have to invest too much now. Want to cut hairs as previous but you didnt grt how to do it we have the last cut portion to share your last cut to the barber.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+> time is the most important and expensive thing in this world and it should be like gold for everyone. respecting time we are making somthing that will save enough time to read 10 pages of a book. by the way if you read 10 pages of a book you can finish a book of 300 pages in 1 month.
