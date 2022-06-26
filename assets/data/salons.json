@@ -1,0 +1,50 @@
+[
+    {
+        "salonName" : "KGN Salon",
+        "stars" : "3",
+        "waitTime" : "78:78",
+        "salonUniqueId" : "sdjn39j39f02"
+    },
+    {
+        "salonName" : "KGN Salon1",
+        "stars" : "3",
+        "waitTime" : "78:78",
+        "salonUniqueId" : "sdjn39j39f02"
+    },
+    {
+        "salonName" : "KGN Salon2",
+        "stars" : "3",
+        "waitTime" : "78:78",
+        "salonUniqueId" : "sdjn39j39f02"
+    },
+    {
+        "salonName" : "KGN Salon3",
+        "stars" : "3",
+        "waitTime" : "78:78",
+        "salonUniqueId" : "sdjn39j39f02"
+    },
+    {
+        "salonName" : "KGN Salon5",
+        "stars" : "3",
+        "waitTime" : "78:78",
+        "salonUniqueId" : "sdjn39j39f02"
+    },
+    {
+        "salonName" : "KGN Salon6",
+        "stars" : "3",
+        "waitTime" : "78:78",
+        "salonUniqueId" : "sdjn39j39f02"
+    },
+    {
+        "salonName" : "KGN Salon7",
+        "stars" : 3,
+        "waitTime" : "78:78",
+        "salonUniqueId" : "sdjn39j39f02"
+    },
+    {
+        "salonName" : "KGN Salon8",
+        "stars" : 3,
+        "waitTime" : "78:78",
+        "salonUniqueId" : "sdjn39j39f02"
+    }
+]
