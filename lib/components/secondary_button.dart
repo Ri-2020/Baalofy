@@ -22,6 +22,7 @@ class SecondaryButton extends StatelessWidget {
         style: TextButton.styleFrom(
           onSurface: Colors.transparent,
           elevation: 0,
+          // surfaceTintColor: Colors.transparent,
           padding: const EdgeInsets.all(10),
           // primary: Colors.transparent,
           // onPrimary: DARK1,

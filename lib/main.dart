@@ -1,8 +1,10 @@
+import 'package:finalap/app.dart';
 import 'package:finalap/routes.dart';
 import 'package:finalap/screens/dynamic/email_verification.dart';
 import 'package:finalap/screens/dynamic/get_details.dart';
 import 'package:finalap/screens/dynamic/home_screen/home_screen.dart';
 import 'package:finalap/screens/dynamic/login_screen.dart';
+import 'package:finalap/screens/dynamic/profile_screen.dart';
 import 'package:finalap/screens/dynamic/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -34,6 +36,8 @@ class MyApp extends StatelessWidget {
         emailVerificationPageRoute: (context) => const EmailVerification(),
         getDetailsPageRoute: (context) => const GetDetails(),
         homePageRoute: (context) => const HomePage(),
+        appRoute: (context) => const App(),
+        profileRoute: (context) => const ProfilePage(),
       },
     );
   }

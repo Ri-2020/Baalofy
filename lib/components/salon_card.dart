@@ -28,8 +28,8 @@ class SalonCard extends StatelessWidget {
         boxShadow: const [
           BoxShadow(
             color: Colors.grey,
-            blurRadius: 10.0,
-            spreadRadius: -6.0,
+            blurRadius: 20,
+            spreadRadius: -15.0,
             offset: Offset(
               0.0,
               0.0,

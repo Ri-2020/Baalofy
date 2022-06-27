@@ -20,7 +20,7 @@ class PrimaryButton extends StatelessWidget {
       child: TextButton(
         onPressed: onPress,
         style: TextButton.styleFrom(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           primary: LIGHT1,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),

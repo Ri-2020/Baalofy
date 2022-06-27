@@ -73,13 +73,17 @@ class _LoginPageState extends State<LoginPage> {
               children: <Widget>[
                 //EMAIL TEXTBOX
                 TextFormFieldStyled(
+                  icon: const Icon(Icons.email),
                   controller: _email,
+                  keyboardType: TextInputType.emailAddress,
                   lable: "Email Address",
                   hint: "your email address",
                 ),
                 // PASSWORD TEXTBOX
                 TextFormFieldStyled(
+                  icon: const Icon(Icons.password),
                   controller: _password,
+                  obscureText: true,
                   lable: "Password",
                   hint: "Enter Password",
                 ),

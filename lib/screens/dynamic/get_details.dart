@@ -71,6 +71,9 @@ class _GetDetailsState extends State<GetDetails> {
                   });
                 },
               ),
+              const SizedBox(
+                height: 30,
+              ),
               PrimaryButton(
                   child: const Text(
                     "Continue",
@@ -81,8 +84,8 @@ class _GetDetailsState extends State<GetDetails> {
                       errorText = "Enter the Full name";
                     } else {
                       errorText = null;
-                      Navigator.of(context).pushNamedAndRemoveUntil(
-                          homePageRoute, (route) => false);
+                      Navigator.of(context)
+                          .pushNamedAndRemoveUntil(appRoute, (route) => false);
                     }
                     setState(() {});
                   })

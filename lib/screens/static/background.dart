@@ -1,7 +1,9 @@
+import 'package:finalap/screens/dynamic/login_screen.dart';
+import 'package:finalap/screens/dynamic/signup_screen.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_svg/svg.dart';
 
-class Background extends StatelessWidget {
+class Background extends StatefulWidget {
   final Widget child;
   const Background({
     Key? key,
@@ -9,8 +11,14 @@ class Background extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<Background> createState() => _BackgroundState();
+}
+
+class _BackgroundState extends State<Background> {
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -42,7 +50,7 @@ class Background extends StatelessWidget {
                   ),
                 ),
               ),
-              child,
+              widget.child,
             ],
           ),
         ),

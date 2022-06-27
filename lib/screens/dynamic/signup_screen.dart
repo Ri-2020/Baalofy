@@ -52,11 +52,13 @@ class _SignupPageState extends State<SignupPage> {
                 height: 10,
               ),
               TextFormFieldStyled(
+                icon: const Icon(Icons.email),
                 hint: "abcdef@email.xyz",
                 controller: _email,
                 lable: "Email Address",
               ),
               TextFormFieldStyled(
+                icon: const Icon(Icons.password),
                 hint: "Password",
                 controller: _password,
                 lable: "Password",
