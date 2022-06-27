@@ -1,8 +1,8 @@
 import 'package:finalap/components/primary_button.dart';
 import 'package:finalap/components/secondary_button.dart';
 import 'package:finalap/components/text_form_field.dart';
-import 'package:finalap/constants.dart';
-import 'package:finalap/routes.dart';
+import 'package:finalap/major_constants/constants.dart';
+import 'package:finalap/major_constants/routes.dart';
 import 'package:finalap/screens/static/background.dart';
 import 'package:flutter/material.dart';
 

@@ -2,7 +2,8 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:finalap/components/salon_card.dart';
-import 'package:finalap/constants.dart';
+import 'package:finalap/major_constants/constants.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:finalap/services/salon_list/salon_card_model.dart';
 import 'package:finalap/screens/static/background.dart';
@@ -17,17 +18,23 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<Salon> _salons = [];
-  final List<SalonCard> _salonCards = [];
+  final List<Widget> _salonCards = [];
 
   Future<List<Salon>> fetchSalon() async {
     Uri requestUrl = Uri.parse("https://jsonkeeper.com/b/0XTW");
     String noImageUrl =
         "https://www.trendsetter.com/pub/media/catalog/product/placeholder/default/no_image_placeholder.jpg";
-
-    print("in this");
+    setState(() {
+      _salonCards.clear();
+      _salonCards.add(
+        const CircularProgressIndicator(),
+      );
+    });
+    log("in this"); // to check that this fucntion is working
 
     try {
       dynamic response = await http.get(requestUrl);
+      _salonCards.clear();
       if (response.statusCode == 200) {
         List<dynamic> values = [];
         values = json.decode(response.body);
@@ -65,8 +72,11 @@ class _HomePageState extends State<HomePage> {
     return Background(
       child: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.symmetric(
-            horizontal: 0.05 * width,
+          margin: EdgeInsets.only(
+            left: 0.05 * width,
+            right: 0.05 * width,
+            bottom: 85,
+            top: 15,
           ),
           child: Column(
             children: [
@@ -97,6 +107,16 @@ class _HomePageState extends State<HomePage> {
                   children: _salonCards,
                 ),
               ),
+              const SizedBox(
+                child: Text(
+                  "Save your time above this line.",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 96, 96, 96),
+                    fontWeight: FontWeight.w100,
+                    fontSize: 10,
+                  ),
+                ),
+              )
             ],
           ),
         ),

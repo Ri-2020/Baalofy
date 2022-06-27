@@ -1,8 +1,6 @@
-import 'package:finalap/constants.dart';
+import 'package:finalap/major_constants/constants.dart';
 import 'package:finalap/screens/dynamic/home_screen/home_screen.dart';
-import 'package:finalap/screens/dynamic/login_screen.dart';
 import 'package:finalap/screens/dynamic/profile_screen.dart';
-import 'package:finalap/screens/dynamic/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatefulWidget {

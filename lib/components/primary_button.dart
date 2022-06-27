@@ -1,4 +1,4 @@
-import 'package:finalap/constants.dart';
+import 'package:finalap/major_constants/constants.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable

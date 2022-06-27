@@ -1,5 +1,5 @@
 import 'package:finalap/components/stars.dart';
-import 'package:finalap/constants.dart';
+import 'package:finalap/major_constants/constants.dart';
 import 'package:finalap/services/salon_list/salon_card_model.dart';
 import 'package:flutter/material.dart';
 
@@ -23,12 +23,12 @@ class SalonCard extends StatelessWidget {
       ),
       // height: 170,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
+        borderRadius: BorderRadius.circular(5),
+        color: const Color.fromRGBO(255, 255, 255, 1),
         boxShadow: const [
           BoxShadow(
             color: Colors.grey,
-            blurRadius: 20,
+            blurRadius: 25,
             spreadRadius: -15.0,
             offset: Offset(
               0.0,
@@ -45,7 +45,9 @@ class SalonCard extends StatelessWidget {
             SizedBox(
               width: 0.3 * width,
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: const BorderRadius.horizontal(
+                  left: Radius.circular(5),
+                ),
                 child: Image.asset("assets/images/baalofy_logo.png"),
               ),
             ),
@@ -64,7 +66,7 @@ class SalonCard extends StatelessWidget {
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                        fontSize: HEADINGFONTSIZE2,
+                        fontSize: HEADINGFONTSIZE3,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -86,12 +88,32 @@ class SalonCard extends StatelessWidget {
                         Text(
                           "$waitTime min",
                           style: const TextStyle(
-                            fontSize: 20,
+                            fontSize: 15,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                       ],
                     ),
+                    RichText(
+                      text: TextSpan(
+                        style: DefaultTextStyle.of(context).style,
+                        children: const <TextSpan>[
+                          TextSpan(text: 'Distance :\t'),
+                          TextSpan(
+                              text: '324',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              )),
+                          TextSpan(
+                            text: 'm',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),

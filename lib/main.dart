@@ -1,5 +1,5 @@
 import 'package:finalap/app.dart';
-import 'package:finalap/routes.dart';
+import 'package:finalap/major_constants/routes.dart';
 import 'package:finalap/screens/dynamic/email_verification.dart';
 import 'package:finalap/screens/dynamic/get_details.dart';
 import 'package:finalap/screens/dynamic/home_screen/home_screen.dart';
@@ -35,8 +35,8 @@ class MyApp extends StatelessWidget {
         signupPageRoute: (context) => const SignupPage(),
         emailVerificationPageRoute: (context) => const EmailVerification(),
         getDetailsPageRoute: (context) => const GetDetails(),
-        homePageRoute: (context) => const HomePage(),
         appRoute: (context) => const App(),
+        homePageRoute: (context) => const HomePage(),
         profileRoute: (context) => const ProfilePage(),
       },
     );

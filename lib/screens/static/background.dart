@@ -1,5 +1,3 @@
-import 'package:finalap/screens/dynamic/login_screen.dart';
-import 'package:finalap/screens/dynamic/signup_screen.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_svg/svg.dart';
 
@@ -26,13 +24,13 @@ class _BackgroundState extends State<Background> {
           height: size.height,
           width: size.width,
           child: Stack(
-            alignment: Alignment.center,
+            alignment: Alignment.topCenter,
             children: <Widget>[
               Positioned(
                 top: 0.0,
                 left: -60.0,
                 child: Opacity(
-                  opacity: 0.2,
+                  opacity: 0.1,
                   child: Image.asset(
                     "assets/images/top.png",
                     width: 0.4 * size.width,
@@ -43,7 +41,7 @@ class _BackgroundState extends State<Background> {
                 bottom: 0.0,
                 right: -50.0,
                 child: Opacity(
-                  opacity: 0.2,
+                  opacity: 0.1,
                   child: Image.asset(
                     "assets/images/bottom.png",
                     width: 0.3 * size.width,
