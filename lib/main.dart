@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: const LoginPage(),
+      home: const App(),
       routes: {
         loginPageRoute: (context) => const LoginPage(),
         signupPageRoute: (context) => const SignupPage(),

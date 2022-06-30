@@ -20,6 +20,12 @@ class _HomePageState extends State<HomePage> {
   final List<Salon> _salons = [];
   final List<Widget> _salonCards = [];
 
+  @override
+  void initState() {
+    super.initState();
+    fetchSalon();
+  }
+
   Future<List<Salon>> fetchSalon() async {
     Uri requestUrl = Uri.parse("https://jsonkeeper.com/b/0XTW");
     String noImageUrl =
@@ -122,11 +128,5 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    fetchSalon();
   }
 }
