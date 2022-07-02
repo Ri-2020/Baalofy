@@ -1,5 +1,6 @@
 // import 'dart:html';
 
+import 'package:finalap/components/back_card.dart';
 import 'package:finalap/major_constants/constants.dart';
 import 'package:finalap/screens/static/background.dart';
 import 'package:flutter/material.dart';
@@ -18,34 +19,32 @@ class _ProfilePageState extends State<ProfilePage> {
     // ignore: unused_local_variable
     double width = size.width;
     return Background(
-      child: Container(
-        margin: const EdgeInsets.symmetric(
-          vertical: 40,
-          horizontal: 20,
-        ),
-        child: Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: LIGHT2,
-              ),
-              child: Row(children: [
-                CircleAvatar(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(
-                      50,
-                    ),
-                    child: Image.asset(
-                      'assets/images/indian.png',
-                    ),
-                  ),
-                )
-              ]),
-            ),
-          ],
-        ),
+        child: Container(
+      margin: const EdgeInsets.symmetric(
+        vertical: 40,
+        horizontal: 20,
       ),
-    );
+      child: Column(
+        children: [
+          BackCard(
+              child: Row(
+            children: [
+              CircleAvatar(
+                radius: 40,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(
+                    50,
+                  ),
+                  child: Image.asset(
+                    'assets/images/indian.png',
+                  ),
+                ),
+              ),
+              Container(),
+            ],
+          ))
+        ],
+      ),
+    ));
   }
 }

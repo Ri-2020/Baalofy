@@ -39,86 +39,89 @@ class SalonCard extends StatelessWidget {
       ),
       child: GestureDetector(
         // onTap: () => print("tap"),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: 0.3 * width,
-              child: ClipRRect(
-                borderRadius: const BorderRadius.horizontal(
-                  left: Radius.circular(5),
+        child: SizedBox(
+          width: 500,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: 100,
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.horizontal(
+                    left: Radius.circular(5),
+                  ),
+                  child: Image.asset("assets/images/baalofy_logo.png"),
                 ),
-                child: Image.asset("assets/images/baalofy_logo.png"),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.all(
-                10,
-              ),
-              child: SizedBox(
-                width: 0.45 * width,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      salonName,
-                      softWrap: false,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: HEADINGFONTSIZE3,
-                        fontWeight: FontWeight.w500,
+              Container(
+                padding: const EdgeInsets.all(
+                  10,
+                ),
+                child: SizedBox(
+                  width: 0.45 * width,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        salonName,
+                        softWrap: false,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: HEADINGFONTSIZE3,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
-                    ),
-                    // const int mycount =
-                    Stars(
-                      count: starCount,
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        const Text(
-                          "Wait time :\t",
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.w400),
-                        ),
-                        Text(
-                          "$waitTime min",
-                          style: const TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ],
-                    ),
-                    RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: const <TextSpan>[
-                          TextSpan(text: 'Distance :\t'),
-                          TextSpan(
-                              text: '324',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
-                              )),
-                          TextSpan(
-                            text: 'm',
+                      // const int mycount =
+                      Stars(
+                        count: starCount,
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          const Text(
+                            "Wait time :\t",
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                                fontSize: 15, fontWeight: FontWeight.w400),
+                          ),
+                          Text(
+                            "$waitTime min",
+                            style: const TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ],
                       ),
-                    )
-                  ],
+                      RichText(
+                        text: TextSpan(
+                          style: DefaultTextStyle.of(context).style,
+                          children: const <TextSpan>[
+                            TextSpan(text: 'Distance :\t'),
+                            TextSpan(
+                                text: '324',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                )),
+                            TextSpan(
+                              text: 'm',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
