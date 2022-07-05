@@ -1,13 +1,20 @@
 // import 'package:finalap/constants.dart';
+import 'package:finalap/major_constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class SecondaryButton extends StatelessWidget {
   final String child;
+  final Widget? icon;
+  final Color? color;
+  final double? fontsize;
   final void Function() onPress;
 
   const SecondaryButton({
     Key? key,
     required this.child,
+    this.fontsize,
+    this.icon,
+    this.color,
     required this.onPress,
   }) : super(key: key);
 
@@ -27,10 +34,19 @@ class SecondaryButton extends StatelessWidget {
           // primary: Colors.transparent,
           // onPrimary: DARK1,
         ),
-        child: Text(child,
-            style: const TextStyle(
-              color: Colors.black,
-            )),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              child,
+              style: TextStyle(
+                color: color ?? DARK2,
+                fontSize: fontsize ?? 14,
+              ),
+            ),
+            icon ?? const SizedBox(),
+          ],
+        ),
       ),
     );
   }

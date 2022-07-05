@@ -10,12 +10,24 @@ class BackCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    final width = size.width;
     return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: LIGHT2,
+      margin: const EdgeInsets.symmetric(
+        vertical: 5,
       ),
+      padding: const EdgeInsets.all(10),
+      width: 0.9 * width,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: LIGHT1,
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black,
+              blurRadius: 5,
+              spreadRadius: -5,
+            )
+          ]),
       child: child,
     );
   }

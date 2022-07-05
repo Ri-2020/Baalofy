@@ -18,6 +18,7 @@ class SalonCard extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     dynamic width = size.width;
     return Container(
+      width: width,
       margin: const EdgeInsets.symmetric(
         vertical: 5.0,
       ),
@@ -45,12 +46,15 @@ class SalonCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                width: 100,
+                width: 120,
                 child: ClipRRect(
                   borderRadius: const BorderRadius.horizontal(
                     left: Radius.circular(5),
                   ),
-                  child: Image.asset("assets/images/baalofy_logo.png"),
+                  child: Image.asset(
+                    "assets/images/baalofy_logo.png",
+                    fit: BoxFit.fitHeight,
+                  ),
                 ),
               ),
               Container(
@@ -68,11 +72,11 @@ class SalonCard extends StatelessWidget {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
+                          fontFamily: BASICFONTFAMILY,
                           fontSize: HEADINGFONTSIZE3,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: BOLD,
                         ),
                       ),
-                      // const int mycount =
                       Stars(
                         count: starCount,
                       ),
@@ -85,13 +89,16 @@ class SalonCard extends StatelessWidget {
                           const Text(
                             "Wait time :\t",
                             style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w400),
+                                fontFamily: BASICFONTFAMILY,
+                                fontSize: 15,
+                                fontWeight: MEDIUM),
                           ),
                           Text(
                             "$waitTime min",
                             style: const TextStyle(
                               fontSize: 15,
-                              fontWeight: FontWeight.w600,
+                              fontFamily: BASICFONTFAMILY,
+                              fontWeight: BOLD,
                             ),
                           ),
                         ],
@@ -100,11 +107,17 @@ class SalonCard extends StatelessWidget {
                         text: TextSpan(
                           style: DefaultTextStyle.of(context).style,
                           children: const <TextSpan>[
-                            TextSpan(text: 'Distance :\t'),
+                            TextSpan(
+                                text: 'Distance :\t',
+                                style: TextStyle(
+                                  fontFamily: BASICFONTFAMILY,
+                                  fontWeight: MEDIUM,
+                                )),
                             TextSpan(
                                 text: '324',
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold,
+                                  fontFamily: BASICFONTFAMILY,
+                                  fontWeight: BOLD,
                                   fontSize: 15,
                                 )),
                             TextSpan(

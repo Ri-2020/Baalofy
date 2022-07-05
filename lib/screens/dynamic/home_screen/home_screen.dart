@@ -92,10 +92,11 @@ class _HomePageState extends State<HomePage> {
                   top: 40,
                 ),
                 child: const Text(
-                  "SALONS near you!",
+                  "SALONS near you",
                   style: TextStyle(
+                    fontFamily: 'Poppins',
                     fontSize: HEADINGFONTSIZE1,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: EXTRABOLD,
                   ),
                 ),
               ),
@@ -117,8 +118,9 @@ class _HomePageState extends State<HomePage> {
                 child: Text(
                   "Save your time above this line.",
                   style: TextStyle(
+                    fontFamily: BASICFONTFAMILY,
                     color: Color.fromARGB(255, 96, 96, 96),
-                    fontWeight: FontWeight.w100,
+                    fontWeight: LIGHT,
                     fontSize: 10,
                   ),
                 ),
