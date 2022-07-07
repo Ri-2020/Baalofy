@@ -118,7 +118,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       onPress: () {},
                       fontsize: BUTTONFONTSIZE1,
                       icon: const Icon(
-                        Icons.door_sliding,
+                        Icons.menu_book,
                         color: DARK2,
                       ),
                     ),

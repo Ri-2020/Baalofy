@@ -1,5 +1,6 @@
 import 'package:finalap/components/stars.dart';
 import 'package:finalap/major_constants/constants.dart';
+import 'package:finalap/screens/dynamic/salon_page.dart';
 import 'package:finalap/services/salon_list/salon_card_model.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +18,7 @@ class SalonCard extends StatelessWidget {
     int? starCount = salon?.stars;
     Size size = MediaQuery.of(context).size;
     dynamic width = size.width;
+
     return Container(
       width: width,
       margin: const EdgeInsets.symmetric(
@@ -38,8 +40,18 @@ class SalonCard extends StatelessWidget {
           )
         ],
       ),
-      child: GestureDetector(
-        // onTap: () => print("tap"),
+      child: TextButton(
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return SalonPage(
+              salon: salon,
+            );
+          }));
+        },
+        style: TextButton.styleFrom(
+            textStyle: const TextStyle(
+          color: DARK2,
+        )),
         child: SizedBox(
           width: 500,
           child: Row(
@@ -72,6 +84,7 @@ class SalonCard extends StatelessWidget {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
+                          color: DARK2,
                           fontFamily: BASICFONTFAMILY,
                           fontSize: HEADINGFONTSIZE3,
                           fontWeight: BOLD,
@@ -91,12 +104,14 @@ class SalonCard extends StatelessWidget {
                             style: TextStyle(
                                 fontFamily: BASICFONTFAMILY,
                                 fontSize: 15,
+                                color: DARK2,
                                 fontWeight: MEDIUM),
                           ),
                           Text(
                             "$waitTime min",
                             style: const TextStyle(
                               fontSize: 15,
+                              color: DARK2,
                               fontFamily: BASICFONTFAMILY,
                               fontWeight: BOLD,
                             ),
@@ -108,13 +123,13 @@ class SalonCard extends StatelessWidget {
                           style: DefaultTextStyle.of(context).style,
                           children: const <TextSpan>[
                             TextSpan(
-                                text: 'Distance :\t',
+                                text: 'Distance :',
                                 style: TextStyle(
                                   fontFamily: BASICFONTFAMILY,
                                   fontWeight: MEDIUM,
                                 )),
                             TextSpan(
-                                text: '324',
+                                text: ' 324',
                                 style: TextStyle(
                                   fontFamily: BASICFONTFAMILY,
                                   fontWeight: BOLD,
