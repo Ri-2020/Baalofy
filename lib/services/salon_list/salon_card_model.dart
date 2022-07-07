@@ -9,7 +9,7 @@ class Salon {
   Salon.fromJson(Map<String, dynamic> json) {
     salonName = json['salonName'];
     stars = json['stars'] ?? 0;
-    waitTime = json['WaitTime'];
+    waitTime = json['waitTime'];
     salonUniqueId = json['salonUniqueId'];
   }
 }

@@ -1,13 +1,19 @@
+// imports that are from flutter and dart
 import 'dart:convert';
 import 'dart:developer';
+import 'package:finalap/components/primary_button.dart';
+import 'package:flutter/material.dart';
+import 'dart:developer' as developer;
+import 'package:flutter/cupertino.dart';
+import 'package:http/http.dart' as http;
 
+// all pages and classes created by us
 import 'package:finalap/components/salon_card.dart';
 import 'package:finalap/major_constants/constants.dart';
-import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:finalap/services/salon_list/salon_card_model.dart';
 import 'package:finalap/screens/static/background.dart';
-import 'package:flutter/cupertino.dart';
+
+// [_salonCardsData] is the list of data of the salon card
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,8 +23,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<Salon> _salons = [];
-  final List<Widget> _salonCards = [];
+  final List<Salon> _salonCardsData = [];
+  final List<Widget> _salonCardList = [];
+  bool flag = true;
 
   @override
   void initState() {
@@ -27,52 +34,74 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<List<Salon>> fetchSalon() async {
-    Uri requestUrl = Uri.parse("https://jsonkeeper.com/b/0XTW");
-    String noImageUrl =
-        "https://www.trendsetter.com/pub/media/catalog/product/placeholder/default/no_image_placeholder.jpg";
+    flag = true;
+    Uri requestUrl = Uri.parse("https://jsonkeeper.com/b/BN50");
+    // String noImageUrl =
+    // "https://www.trendsetter.com/pub/media/catalog/product/placeholder/default/no_image_placeholder.jpg";
     setState(() {
-      _salonCards.clear();
-      _salonCards.add(
+      _salonCardList.clear();
+      _salonCardList.add(
         const CircularProgressIndicator(),
       );
     });
-    log("in this"); // to check that this fucntion is working
+    developer.log("in this"); // to check that this fucntion is working
 
     try {
       dynamic response = await http.get(requestUrl);
-      _salonCards.clear();
+      _salonCardList.clear();
       if (response.statusCode == 200) {
         List<dynamic> values = [];
         values = json.decode(response.body);
         if (values.isNotEmpty) {
-          _salons.clear();
+          _salonCardsData.clear();
           for (dynamic i in values) {
             Map<String, dynamic> map = i;
-            _salons.add(
+            _salonCardsData.add(
               Salon.fromJson(map),
             );
           }
         }
       }
       setState(() {
-        _salons;
+        _salonCardsData;
       });
-      return _salons;
+      return _salonCardsData;
     } catch (err) {
       log(err.toString());
-      return [
-        Salon("nothings is fetched", 2, noImageUrl, "22:22"),
-      ];
+      _salonCardsData.clear();
+      flag = false;
+      setState(() {
+        _salonCardsData;
+      });
+      return _salonCardsData;
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    for (Salon i in _salons) {
-      _salonCards.add(
-        SalonCard(salon: i),
+    if (_salonCardsData.isEmpty && !flag) {
+      _salonCardList.clear();
+      _salonCardList.add(
+        const Text("Some Error Occured"),
       );
+      _salonCardList.add(
+        PrimaryButton(
+          child: const Text("Retry"),
+          onPress: () {
+            fetchSalon();
+          },
+        ),
+      );
+    } else if (_salonCardsData.isEmpty && flag) {
+    } else {
+      _salonCardList.clear();
+      for (Salon i in _salonCardsData) {
+        _salonCardList.add(
+          SalonCard(salon: i),
+        );
+      }
     }
+
     Size size = MediaQuery.of(context).size;
     dynamic width = size.width;
     return Background(
@@ -111,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                   vertical: 20,
                 ),
                 child: Column(
-                  children: _salonCards,
+                  children: _salonCardList,
                 ),
               ),
               const SizedBox(

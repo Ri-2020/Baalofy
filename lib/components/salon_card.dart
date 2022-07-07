@@ -13,7 +13,7 @@ class SalonCard extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    String waitTime = salon!.waitTime ?? "00:00";
+    String? waitTime = salon!.waitTime;
     String salonName = salon!.salonName!;
     int? starCount = salon?.stars;
     Size size = MediaQuery.of(context).size;

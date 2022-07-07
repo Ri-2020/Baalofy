@@ -1,10 +1,11 @@
-// import 'dart:html';
+// flutter and dart imports
+import 'package:flutter/material.dart';
 
+// screens and classes imports
 import 'package:finalap/components/back_card.dart';
 import 'package:finalap/components/secondary_button.dart';
 import 'package:finalap/major_constants/constants.dart';
 import 'package:finalap/screens/static/background.dart';
-import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
