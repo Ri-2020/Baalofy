@@ -1,15 +1,18 @@
-import 'package:finalap/app.dart';
-import 'package:finalap/major_constants/routes.dart';
-import 'package:finalap/screens/dynamic/email_verification.dart';
-import 'package:finalap/screens/dynamic/get_details.dart';
-import 'package:finalap/screens/dynamic/home_screen/home_screen.dart';
-import 'package:finalap/screens/dynamic/login_screen.dart';
-import 'package:finalap/screens/dynamic/profile_screen.dart';
-import 'package:finalap/screens/dynamic/signup_screen.dart';
+//dart and flutter imports
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
+
+// screen and constant imports
+import 'package:finalap/app.dart';
+import 'package:finalap/major_constants/routes.dart';
+import 'package:finalap/screens/dynamic/email_verification_screen.dart';
+import 'package:finalap/screens/dynamic/get_details_screen.dart';
+import 'package:finalap/screens/dynamic/home_screen/home_screen.dart';
+import 'package:finalap/screens/dynamic/login_screen.dart';
+import 'package:finalap/screens/dynamic/profile_screen.dart';
+import 'package:finalap/screens/dynamic/signup_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,7 +32,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: const App(),
+      home: const LoginPage(),
       routes: {
         loginPageRoute: (context) => const LoginPage(),
         signupPageRoute: (context) => const SignupPage(),

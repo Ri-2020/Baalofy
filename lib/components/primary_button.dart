@@ -16,7 +16,6 @@ class PrimaryButton extends StatelessWidget {
     // Size size = MediaQuery.of(context).size;
     return Container(
       margin: const EdgeInsets.only(bottom: 5),
-      // width: 0.9 * size.width,
       child: TextButton(
         onPressed: onPress,
         style: TextButton.styleFrom(

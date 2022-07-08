@@ -14,7 +14,7 @@ class Stars extends StatelessWidget {
     if (count == 5 || count == 4) {
       color = const Color.fromARGB(255, 86, 167, 20);
     } else if (count == 3) {
-      color = const Color.fromARGB(255, 198, 143, 34);
+      color = const Color.fromARGB(255, 198, 179, 34);
     } else if (count == 2) {
       color = const Color.fromARGB(255, 198, 132, 34);
     } else {

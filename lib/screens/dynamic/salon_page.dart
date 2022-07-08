@@ -21,7 +21,7 @@ class SalonPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         elevation: 0,
-        title: Text(salon!.salonName!),
+        title: Text(salon!.salonName),
         // centerTitle: true,
       ),
       body: Stack(
@@ -44,7 +44,7 @@ class SalonPage extends StatelessWidget {
                       SizedBox(
                         width: width,
                         child: Text(
-                          salon!.salonName!,
+                          salon!.salonName,
                           textAlign: TextAlign.left,
                           style: const TextStyle(
                             fontSize: HEADINGFONTSIZE1,

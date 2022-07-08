@@ -29,6 +29,19 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
         child: Column(
           children: [
+            const SizedBox(height: 50),
+            BackCard(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/images/baalofy_without_back.png",
+                    height: 70,
+                  ),
+                ],
+              ),
+            ),
             BackCard(
               child: Container(
                 padding: const EdgeInsets.all(10),
@@ -84,21 +97,11 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    //edit profile button
-                    SecondaryButton(
-                      child: "Edit Profile",
-                      onPress: () {},
-                      fontsize: BUTTONFONTSIZE1,
-                      icon: const Icon(
-                        Icons.edit,
-                        color: DARK2,
-                      ),
-                    ),
-                    const SizedBox(height: 10),
                     // account balance button
                     SecondaryButton(
                       child: "Account Balance",
                       onPress: () {},
+                      mainAlignment: MainAxisAlignment.spaceBetween,
                       fontsize: BUTTONFONTSIZE1,
                       icon: Row(
                         children: [
@@ -114,12 +117,26 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
                     const SizedBox(height: 10),
+
                     SecondaryButton(
                       child: "Your Visits",
                       onPress: () {},
                       fontsize: BUTTONFONTSIZE1,
+                      mainAlignment: MainAxisAlignment.spaceBetween,
                       icon: const Icon(
                         Icons.menu_book,
+                        color: DARK2,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    //edit profile button
+                    SecondaryButton(
+                      child: "Edit Profile",
+                      mainAlignment: MainAxisAlignment.spaceBetween,
+                      onPress: () {},
+                      fontsize: BUTTONFONTSIZE1,
+                      icon: const Icon(
+                        Icons.edit,
                         color: DARK2,
                       ),
                     ),
@@ -128,6 +145,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: "Settings",
                       onPress: () {},
                       fontsize: BUTTONFONTSIZE1,
+                      mainAlignment: MainAxisAlignment.spaceBetween,
                       icon: const Icon(
                         Icons.settings,
                         color: DARK2,
@@ -138,16 +156,39 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: "Logout",
                       onPress: () {},
                       fontsize: BUTTONFONTSIZE1,
+                      mainAlignment: MainAxisAlignment.spaceBetween,
                       // color: Colors.red,
                       icon: const Icon(
                         Icons.logout,
                         color: Colors.red,
                       ),
                     ),
+                    const SizedBox(height: 10),
                   ],
                 ),
               ),
-            )
+            ),
+            BackCard(
+              child: Column(
+                children: [
+                  SecondaryButton(
+                    onPress: () {},
+                    child: 'Our Terms&Conditions',
+                    fontsize: 10,
+                    padding: 0,
+                    margin: 0,
+                  ),
+                  SecondaryButton(
+                    onPress: () {},
+                    child: 'About Us',
+                    fontsize: 10,
+                    padding: 0,
+                    margin: 0,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 50),
           ],
         ),
       ),

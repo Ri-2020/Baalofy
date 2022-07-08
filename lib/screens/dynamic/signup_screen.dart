@@ -5,6 +5,8 @@ import 'package:finalap/major_constants/constants.dart';
 import 'package:finalap/major_constants/routes.dart';
 import 'package:finalap/screens/static/background.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_signin_button/button_list.dart';
+import 'package:flutter_signin_button/button_view.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
@@ -20,8 +22,8 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Background(
-      child: Container(
-        margin: EdgeInsets.only(top: 0.2 * size.width),
+      child: SizedBox(
+        // margin: EdgeInsets.only(top: 0.2 * size.width),
         width: 0.8 * size.width,
         child: Form(
           child: Column(
@@ -73,12 +75,30 @@ class _SignupPageState extends State<SignupPage> {
                   );
                 },
               ),
-              SecondaryButton(
-                child: "Already Have an Account? Sign In",
-                onPress: () {
-                  Navigator.pushNamedAndRemoveUntil(
-                      context, loginPageRoute, (route) => false);
-                },
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SecondaryButton(
+                        child: "Already Have an Account? Sign In",
+                        onPress: () {
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, loginPageRoute, (route) => false);
+                        },
+                      ),
+                      const Text("or"),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      SignInButton(
+                        Buttons.GoogleDark,
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),

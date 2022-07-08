@@ -69,7 +69,7 @@ flutter:
     - assets/images/
     - assets/fonts/
     - assets/imageSVG/
-    # - assets/data
+    - assets/data/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

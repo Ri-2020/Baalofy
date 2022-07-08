@@ -61,7 +61,7 @@ class _EmailVerificationState extends State<EmailVerification> {
                   (route) => false,
                 );
               },
-            )
+            ),
           ],
         ),
       ),

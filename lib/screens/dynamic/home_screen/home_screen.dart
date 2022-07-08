@@ -1,13 +1,15 @@
 // imports that are from flutter and dart
 import 'dart:convert';
 import 'dart:developer';
-import 'package:finalap/components/primary_button.dart';
-import 'package:flutter/material.dart';
 import 'dart:developer' as developer;
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter/cupertino.dart';
 
 // all pages and classes created by us
+// import 'package:finalap/components/back_card.dart';
+import 'package:finalap/components/primary_button.dart';
+import 'package:finalap/components/secondary_button.dart';
 import 'package:finalap/components/salon_card.dart';
 import 'package:finalap/major_constants/constants.dart';
 import 'package:finalap/services/salon_list/salon_card_model.dart';
@@ -36,14 +38,20 @@ class _HomePageState extends State<HomePage> {
   Future<List<Salon>> fetchSalon() async {
     flag = true;
     Uri requestUrl = Uri.parse("https://jsonkeeper.com/b/BN50");
+
     // String noImageUrl =
     // "https://www.trendsetter.com/pub/media/catalog/product/placeholder/default/no_image_placeholder.jpg";
-    setState(() {
-      _salonCardList.clear();
-      _salonCardList.add(
-        const CircularProgressIndicator(),
-      );
-    });
+
+    setState(
+      () {
+        _salonCardList.clear();
+        _salonCardList.addAll(
+          [
+            const CircularProgressIndicator(),
+          ],
+        );
+      },
+    );
     developer.log("in this"); // to check that this fucntion is working
 
     try {
@@ -79,18 +87,26 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    dynamic width = size.width;
     if (_salonCardsData.isEmpty && !flag) {
       _salonCardList.clear();
-      _salonCardList.add(
-        const Text("Some Error Occured"),
-      );
-      _salonCardList.add(
-        PrimaryButton(
-          child: const Text("Retry"),
-          onPress: () {
-            fetchSalon();
-          },
-        ),
+      _salonCardList.addAll(
+        [
+          SizedBox(
+            height: size.height * .23,
+          ),
+          const Text("Some Error Occured"),
+          PrimaryButton(
+            child: const Text("Retry"),
+            onPress: () {
+              fetchSalon();
+            },
+          ),
+          SizedBox(
+            height: size.height * .20,
+          ),
+        ],
       );
     } else if (_salonCardsData.isEmpty && flag) {
     } else {
@@ -102,8 +118,6 @@ class _HomePageState extends State<HomePage> {
       }
     }
 
-    Size size = MediaQuery.of(context).size;
-    dynamic width = size.width;
     return Background(
       child: SingleChildScrollView(
         child: Container(
@@ -135,6 +149,23 @@ class _HomePageState extends State<HomePage> {
                 ),
                 child: const CupertinoSearchTextField(),
               ),
+              SecondaryButton(
+                padding: 10,
+                onPress: () {},
+                width: width * 0.65,
+                child: "Lalgang, Naupur nsdkcj kidnsicn sdsndcijdsno",
+                fontsize: 15,
+                color: DARK3,
+                icon: const Icon(
+                  Icons.edit,
+                  size: 20,
+                ),
+                preicon: const Icon(
+                  Icons.pin_drop,
+                  size: 25,
+                ),
+                mainAlignment: MainAxisAlignment.spaceBetween,
+              ),
               Container(
                 margin: const EdgeInsets.symmetric(
                   vertical: 20,
@@ -153,7 +184,7 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 10,
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),

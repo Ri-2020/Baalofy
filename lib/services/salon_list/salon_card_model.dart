@@ -1,10 +1,15 @@
 class Salon {
-  String? salonName;
-  late int stars;
+  late String salonName;
+  late int? stars;
   String? waitTime;
   String? salonUniqueId;
 
-  Salon(this.salonName, this.stars, this.waitTime, this.salonUniqueId);
+  Salon({
+    required this.salonName,
+    this.stars,
+    this.waitTime,
+    this.salonUniqueId,
+  });
 
   Salon.fromJson(Map<String, dynamic> json) {
     salonName = json['salonName'];
